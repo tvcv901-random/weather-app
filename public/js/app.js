@@ -15,9 +15,10 @@ weatherForm.addEventListener('submit', (e) => {
             if (data.error) {
                 messageOne.textContent = data.error;
             } else {
-                messageTwo.textContent = 'The weather is ' + (data.forecast.weather_desc[0]).toLowerCase() + '. ';
-                messageTwo.textContent += 'The temperature is currently ' + data.forecast.temperature + '\xB0C' + ' but feels like ' + data.forecast.feelslike + '\xB0C.';
                 messageOne.textContent = 'Location: ' + data.location.location;
+                messageTwo.textContent = 'The weather is ' + (data.forecast.weather_desc[0]).toLowerCase() + '. ';
+                messageTwo.textContent += 'The temperature is currently ' + data.forecast.temperature + '\xB0C' + ' but feels like ' + data.forecast.feelslike + '\xB0C. ';
+                messageTwo.textContent += 'The humidity is ' + data.forecast.humidity + '%.';
             }
         })
     });
