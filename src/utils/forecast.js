@@ -12,7 +12,7 @@ const forecast = (coordinates, callback) => {
         if (error) {
             callback('Unable to connect to weather services', undefined);
         } else if (body.error) {
-            callback(body.error, undefined);
+            callback('Unable to get forecast information. Please try another search', undefined);
         } else {
             const data = body.current;
             callback(undefined, {
